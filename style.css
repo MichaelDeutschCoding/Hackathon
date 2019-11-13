@@ -35,9 +35,9 @@
 }
 
 .board {
-    height: 500px;
-    width: 300px;
-    border: solid 2px black;
+    height: 650px;
+    width: 450px;
+    /* border: solid 2px black; */
     background-color: rgb(238, 228, 141);
 }
 .guessArea { 
@@ -91,3 +91,17 @@
 .palette {
 
 }
+.holdingSource{ //palette while it's marble is lifted
+
+}
+.holdingMoving{ //the marble thats being moved
+
+}
+.landingHover{ //landing spot while marble is over it
+
+}
+body{
+    background-color: rgb(69, 69, 73);
+    display: flex;
+}
+
