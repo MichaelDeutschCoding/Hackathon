@@ -29,25 +29,28 @@ button {
     border: none;
 }
 .marble {
-    height: 30px;
+    height: 60px;
+    width: 60px;
+    margin: 10px;
+    display: inline-block;
 }
 
-.A {
+.A ,#A {
     background-color: blue;
 }
-.B {
+.B ,#B {
     background-color: red;
 }
-.C {
+.C ,#C {
     background-color: orange;
 }
-.D {
+.D ,#D {
     background-color: purple;
 }
-.E {
+.E ,#E {
     background-color: yellow;
 }
-.F {
+.F ,#F {
     background-color: green;
 }
 
@@ -79,5 +82,14 @@ button {
 
 }
 .landing {
+    height: 100px;
+    width: 100px;
+    border: solid 2px black;
+    display: inline-block;
+    margin: 10px;
 
+
+}
+.palette {
+    
 }
