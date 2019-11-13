@@ -1,24 +1,3 @@
-.color {
-    height: 100px;
-    width: 100px;
-}
-button {
-    padding: 25px;
-}
-
-.box {
-    margin: 20px;
-    border: 2px solid black;
-    display: inline-block;
-}
-.landing{
-    height: 150px;
-    width: 300px;
-    font-size: 30px;
-    text-align: center;
-    line-height: 150px;
-}
-
 .submitReady {
     background-color: purple;
     border: 3px solid pink;
@@ -35,16 +14,16 @@ button {
     display: inline-block;
 }
 
-.A ,#A {
+.A, #A {
     background-color: blue;
 }
-.B ,#B {
+.B, #B {
     background-color: red;
 }
-.C ,#C {
+.C, #C {
     background-color: orange;
 }
-.D ,#D {
+.D, #D {
     background-color: purple;
 }
 .E ,#E {
@@ -88,8 +67,18 @@ button {
     display: inline-block;
     margin: 10px;
 
-
 }
 .palette {
     
+}
+.holdingSource {        //the marble on the palette while its marble is lifted
+
+}
+
+.holdingMoving {        //the marble that's being moved
+
+}
+
+.landingHover {         //landing spot while marble is over it
+
 }
