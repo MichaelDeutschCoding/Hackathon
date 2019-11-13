@@ -7,13 +7,161 @@
         <script defer src="main.js"></script>
     </head>
     <body>
-        
-        <div draggable="true" class="color box blue" id="blue"></div>
-        <div draggable="true" class="color box red" id="red"></div>
-        <div draggable="true" class="color box orange" id="orange"></div>
-        <div class="box landing" id="landZone1">Drop Here</div>
-        <div class="box landing" id="landZone2">Or Here</div>
-        <button type="button" onclick = "clearColors()">Reset</button>
-        <button type="button" id="submit" onclick = "validate()">Submit</button>
+        <header><h1>MasterMind 2.0</h1></header>
+        <div class='board'>
+            <div class="guessArea">
+                <div class="guess">
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                </div>
+                <div class="guess">
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                </div>
+                <div class="guess">
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                </div>
+                <div class="guess">
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                </div>
+                <div class="guess">
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                </div>
+                <div class="guess">
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                </div>
+                <div class="guess">
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                </div>
+                <div class="guess">
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                </div>
+                <div class="guess">
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                </div>
+                <div class="guess">
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                    <div class="peg"></div>
+                </div>
+
+
+
+            </div>
+            <div class="resultsArea">
+                <div class="result">
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                </div>
+                <div class="result">
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                </div>
+                <div class="result">
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                </div>
+                <div class="result">
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                </div>
+                <div class="result">
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                </div>
+                <div class="result">
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                </div>
+                <div class="result">
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                </div>
+                <div class="result">
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                </div>
+                <div class="result">
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                </div>
+                <div class="result">
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                    <div class="scorePeg"></div>
+                </div>
+            </div>
+        </div>
+        <div class='inputArea'>
+            <div class='landingZone'>
+                <div class='landing'></div>
+                <div class='landing'></div>
+                <div class='landing'></div>
+                <div class='landing'></div>
+            </div>
+            <div class='palette'>
+                <div class='marble'></div>
+                <div class='marble'></div>
+                <div class='marble'></div>
+                <div class='marble'></div>
+                <div class='marble'></div>
+                <div class='marble'></div>
+            </div>
+            <div id='submit'>Submit</div>
+            <div id='reset'>Reset</div>
+        </div>
     </body>
-</html>
+    </html>
+    <!-- <div draggable="true" class="color box blue" id="blue"></div>
+    <div draggable="true" class="color box red" id="red"></div>
+    <div draggable="true" class="color box orange" id="orange"></div>
+    <div class="box landing" id="landZone1">Drop Here</div>
+    <div class="box landing" id="landZone2">Or Here</div>
+    <button type="button" onclick = "clearColors()">Reset</button>
+    <button type="button" id="submit" onclick = "validate()">Submit</button>
+     -->
