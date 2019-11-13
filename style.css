@@ -29,12 +29,21 @@ button {
     border: none;
 }
 
-.blue {
+.A {
     background-color: blue;
 }
-.red {
+.B {
     background-color: red;
 }
-.orange{
+.C {
     background-color: orange;
+}
+.D {
+    background-color: purple;
+}
+.E {
+    background-color: yellow;
+}
+.F {
+    background-color: green;
 }
