@@ -50,11 +50,13 @@
     height:40px;
     width: 300px;
     
-    
-    
 
 }
 .peg {
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+    display: inline-block;
 
 }
 .resultArea {
@@ -64,13 +66,13 @@
 
 }
 .scorePeg {
-    /* width: 30px;
-    height: 30px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     border: 1px solid black; 
     background-color: rgb(161, 136, 104);   
     display: inline-block;
-    padding: 6.5px; */
+    padding: 6.5px;
 
 }
 .inputArea {
@@ -105,3 +107,10 @@ body{
     display: flex;
 }
 
+.blackPeg {
+    background-color: black;
+}
+
+.whitePeg {
+    background-color: white;
+}
