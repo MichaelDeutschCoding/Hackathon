@@ -78,7 +78,6 @@ function generateRandomCode() {
     return code;
 }
 
-
 function analyzeGuess(guess, code) {
     let blacks = 0;
     for (let i  in guess) {

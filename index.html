@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Mastermind</title>
+        <link rel="stylesheet" href="style.css">
+        <script defer src="main.js"></script>
+    </head>
+    <body>
+        
+        <div draggable="true" class="color box blue" id="blue"></div>
+        <div draggable="true" class="color box red" id="red"></div>
+        <div draggable="true" class="color box orange" id="orange"></div>
+        <div class="box landing" id="landZone1">Drop Here</div>
+        <div class="box landing" id="landZone2">Or Here</div>
+        <button type="button" onclick = "clearColors()">Reset</button>
+        <button type="button" id="submit" onclick = "validate()">Submit</button>
+    </body>
+</html>
