@@ -1,7 +1,7 @@
 let landzone = document.getElementsByClassName("landing");
-let colorPal = document.getElementsByClassName("color");
+let marbles = document.getElementsByClassName("marble");
 let submitButton = document.getElementById("submit");
-
+let resetButton = document.getElementById("reset");
 
 function onDragStart(event){
     event.dataTransfer.setData("text/plain", event.target.id)
@@ -26,22 +26,21 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     console.log("dropping:", data)
     // ev.target.style.background = data;
-    ev.target.classList = "box landing " + data;
+    ev.target.classList = "landing " + data;
     ev.target.style.border = "2px solid black";
     validate()
-
 }
 
-function clearColors() {
+function clearGuess() {
     for (z of landzone) {
-        z.classList = "box landing";
+        z.classList = "landing";
     }
     validate();
 }
 
 function validate() {
     for (z of landzone) {
-        if (z.classList.length < 3){
+        if (z.classList.length < 2){
             console.log("not valid")
             submitButton.className = "submitUnready";
             return false;
@@ -52,7 +51,19 @@ function validate() {
     return true;
 }
 
-for (c of colorPal) {
+function submitGuess() {
+    let currentGuess = [];
+    for (zone of landzone) {
+        let marbletype = zone.classList.item(1);
+        console.log(marbletype);
+    }
+}
+
+
+resetButton.addEventListener("click", clearGuess);
+submitButton.addEventListener("click", submitGuess)
+
+for (c of marbles) {
     c.addEventListener("dragstart",onDragStart);
     c.addEventListener("dragend", dragEnded);
 }
@@ -64,7 +75,6 @@ for (z of landzone) {
 }
 
 const colors = ["A", "B", "C", "D", "E", "F"]
-const code = ["B", "B", "D", "E"];
 
 let g1 = ["A", "B", "A", "C"];
 let g2 = ["B", "E", "A", "E"];
@@ -102,7 +112,3 @@ function analyzeGuess(guess, code) {
     }
     console.log("Blacks:", blacks, "Whites:", whites);
 }
-analyzeGuess(g1, code)
-analyzeGuess(g3, code)
-
-console.log(generateRandomCode());
