@@ -2,32 +2,33 @@ let landzone = document.getElementsByClassName("landing");
 let marbles = document.getElementsByClassName("marble");
 let submitButton = document.getElementById("submit");
 let resetButton = document.getElementById("reset");
+const colors = ["A", "B", "C", "D", "E", "F"]
+
 
 function onDragStart(event){
     event.dataTransfer.setData("text/plain", event.target.id)
-    event.currentTarget.style.border = "3px dashed yellow";
+    event.currentTarget.classList.add("holdingSource");
     console.log("lifting! Data transferring:", event.dataTransfer.getData("text"))
 }
 function dragEnded(event) {
-    event.currentTarget.style.border = "2px solid black";
+    event.currentTarget.classList = "marble";
 }
 
 function allowDrop(ev) {
     ev.preventDefault();
-    ev.target.style.border = "3px dashed yellow";
+    ev.target.classList.add("landingHover");
 }
 
 function dragLeave(ev) {
-    ev.target.style.border = "2px solid black";
+    ev.target.classList.remove("landingHover");
 }
 
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     console.log("dropping:", data)
-    // ev.target.style.background = data;
     ev.target.classList = "landing " + data;
-    ev.target.style.border = "2px solid black";
+    ev.target.classList.remove("landingHover");
     validate()
 }
 
@@ -35,18 +36,18 @@ function clearGuess() {
     for (z of landzone) {
         z.classList = "landing";
     }
-    validate();
+    submitButton.className = "submitUnready";
 }
 
 function validate() {
     for (z of landzone) {
         if (z.classList.length < 2){
             console.log("not valid")
-            submitButton.className = "submitUnready";
+            // submitButton.className = "submitUnready";
             return false;
         }
     }
-    console.log("All good boss!")
+    console.log("Ready to roll, boss!")
     submitButton.className = "submitReady";
     return true;
 }
@@ -54,9 +55,10 @@ function validate() {
 function submitGuess() {
     let currentGuess = [];
     for (zone of landzone) {
-        let marbletype = zone.classList.item(1);
-        console.log(marbletype);
+        currentGuess.push(zone.classList.item(1));
     }
+    // console.log(currentGuess);
+    return currentGuess;
 }
 
 
@@ -74,11 +76,7 @@ for (z of landzone) {
     z.addEventListener("drop", drop);
 }
 
-const colors = ["A", "B", "C", "D", "E", "F"]
 
-let g1 = ["A", "B", "A", "C"];
-let g2 = ["B", "E", "A", "E"];
-let g3 = ["E", "B", "D", "A"]
 
 function generateRandomCode() {
     let code = []
@@ -99,16 +97,12 @@ function analyzeGuess(guess, code) {
     for (color of colors) {
         let g = 0;
         let c = 0;
-        
         for (let i in guess) {
-            if (guess[i] == color) {
-                g++;
-            }
-            if (code[i] == color) {
-                c++;
-            }
+            if (guess[i] == color) {g++;}
+            if (code[i] == color) {c++;}
         }
         whites = (g > c) ? whites+c : whites+g;
     }
     console.log("Blacks:", blacks, "Whites:", whites);
+    return [blacks, whites]
 }
