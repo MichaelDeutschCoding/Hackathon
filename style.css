@@ -1,0 +1,40 @@
+.color {
+    height: 100px;
+    width: 100px;
+}
+button {
+    padding: 25px;
+}
+
+.box {
+    margin: 20px;
+    border: 2px solid black;
+    display: inline-block;
+}
+.landing{
+    height: 150px;
+    width: 300px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 150px;
+}
+
+.submitReady {
+    background-color: purple;
+    border: 3px solid pink;
+}
+
+.submitUnready {
+    background-color: none;
+    border: none;
+}
+
+.blue {
+    background-color: blue;
+}
+.red {
+    background-color: red;
+}
+.orange{
+    background-color: orange;
+}
