@@ -99,9 +99,10 @@
 .holdingMoving{ //the marble thats being moved
 
 }
-.landingHover{ //landing spot while marble is over it
-
+.landingHover{ 
+    border: 2px dashed yellow;
 }
+
 body{
     background-color: rgb(69, 69, 73);
     display: flex;

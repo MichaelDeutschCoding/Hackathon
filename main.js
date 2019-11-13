@@ -1,9 +1,9 @@
 let landzone = document.getElementsByClassName("landing");
 let marbles = document.getElementsByClassName("marble");
-let submitButton = document.getElementById("submit");
-let resetButton = document.getElementById("reset");
 let guessRows = document.getElementsByClassName("guess");
 let resultRows = document.getElementsByClassName("result");
+let secretPegs = document.getElementsByClassName("secretPegs");
+let submitButton = document.getElementById("submit");
 const colors = ["A", "B", "C", "D", "E", "F"];
 let turnNum;
 let code;
@@ -29,6 +29,13 @@ function newGame() {
 
     turnNum = 0;
     code = generateRandomCode();
+}
+
+function gameOver() {
+    for (i in code) {
+        secretPegs[i].classList.add(code[i]);
+    }
+    let answer = prompt("Do you want to play again?")
 }
 
 function onDragStart(event){
@@ -67,8 +74,7 @@ function clearGuess() {
 function validate() {
     for (z of landzone) {
         if (z.classList.length < 2){
-            console.log("not valid")
-            // submitButton.className = "submitUnready";
+            submitButton.className = "submitUnready";
             return false;
         }
     }
@@ -78,7 +84,7 @@ function validate() {
 }
 
 function submitGuess() {
-    // if (!validate()) {return};                   ADD after Testing
+    if (!validate()) {return};
     let currentGuess = [];
     for (elem of landzone) {
         currentGuess.push(elem.classList[1]);
@@ -115,24 +121,38 @@ function analyzeGuess(code, guess) {
 }
 
 function display(result) {
+
+    let currRow = 9-turnNum;
+
     for (let i=0; i<4; i++) {
-        console.log(guessRows[turnNum].children[i].classList)
-        guessRows[turnNum].children[i].classList.add(result[0][i]);
+        guessRows[currRow].children[i].classList.add(result[0][i]);
     }
     let i = 0;
     for (let j=0; j<result[1]; j++){
-        resultRows[turnNum].children[i].classList.add("blackPeg");
+        resultRows[currRow].children[i].classList.add("blackPeg");
         i++;
     }
     for (let j=0; j<result[2]; j++) {
-        resultRows[turnNum].children[i].classList.add("whitePeg");
+        resultRows[currRow].children[i].classList.add("whitePeg");
         i++;
+    }
+
+    if (result[1] == 4) {
+        console.log("You win!");
+        gameOver();
+        return;
+    }
+    if (turnNum == 9) {
+        console.log("You Lose!");
+        gameOver();
+        return;
     }
     turnNum++;
 }
 
-resetButton.addEventListener("click", clearGuess);
-submitButton.addEventListener("click", submitGuess)
+document.getElementById("reset").addEventListener("click", clearGuess);
+submitButton.addEventListener("click", submitGuess);
+document.getElementById("newGame").addEventListener("click", newGame);
 
 for (c of marbles) {
     c.addEventListener("dragstart",onDragStart);
@@ -148,4 +168,5 @@ turnNum = 0;
 code = ["A", "B", "C", "D"];
 
 
-
+let g1 = ["B", "B", "D", "A"];
+let g2 = ["D", "C", "D", "F"];
