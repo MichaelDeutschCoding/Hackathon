@@ -37,6 +37,8 @@ function generateRandomCode() {
 
 function newGame() {
 
+    $('#winningModal').modal('hide');
+    $('#losingModal').modal('hide');
     clearGuess();
     for (elem of document.getElementsByClassName("peg")){
         elem.className = "peg";
@@ -61,15 +63,17 @@ function reveal() {
 function won() {
     console.log("You win!");
     reveal();
+    $('#winningModal').modal('show');
 }
 
 function lost() {
     console.log("You Lose!");
     reveal();
+    $('#losingModal').modal('show');
 }
 
 function onDragStart(event){
-    event.dataTransfer.setData("text/plain", event.target.id)
+    event.dataTransfer.setData("text/plain", event.target.id);
 }
 
 function dragEnded(event) {
@@ -97,18 +101,18 @@ function clearGuess() {
     for (z of landzone) {
         z.classList = "landing";
     }
-    submitButton.className = "submitUnready";
+    submitButton.classList.remove("submitReady");
 }
 
 function validate() {
     for (z of landzone) {
         if (z.classList.length < 2){
-            submitButton.className = "submitUnready";
+            submitButton.classList.remove("submitReady");
             return false;
         }
     }
     console.log("Ready to roll, boss!")
-    submitButton.className = "submitReady";
+    submitButton.classList.add("submitReady");
     return true;
 }
 

@@ -8,20 +8,13 @@ body {
     background-size: cover;
 }
 
-.submitReady {
-    background-color: purple;
-    border: 1px solid rgb(146, 182, 187);
-}
 
-.submitUnready {
-    background-color: none;
-    border: none;
-}
+
 .marble {
     height: 60px;
     width: 60px;
     border-radius:50%;
-    margin: 10px;
+    margin: 5px;
     display: inline-block;
 }
 
@@ -56,10 +49,20 @@ body {
     height: 500px;
     margin: 20px;
     width: 300px;
-    border: 1px solid yellow;
-    
-    
+}
 
+.controls {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    width:90px;
+    border-radius: 7%;
+    text-align: center;
+    margin-bottom: 8px;
+    display:inline-block;
+    background-color: rgb(104, 211, 179, 0.541);
+}
+
+#newGame {
+    background-color: rgba(57, 142, 117, 0.541);
 }
 
 .boardBody{
@@ -89,24 +92,25 @@ body {
     height:10%;
     width:100%;
     padding-top: 5px;
+    display:flex;
+    justify-content: space-around;
 }
 
 .secret{
-    width:60%;
+    width:65%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    /* border:solid 1px red; */
-    margin: 10px;
+    margin: 15px 0 8px 20px;
 }
 .logo{
     /* border: solid 1px yellow; */
-    width: 40%;
+    width: 30%;
 }
 
 .secretPeg{
-    width: 30px;
-    height: 30px;
+    width: 33px;
+    height: 33px;
     border-radius: 50%;
     border: 1px solid rgb(4, 255, 234);
     background-color: rgb(32, 32, 32);
@@ -141,29 +145,24 @@ body {
 }
 
 .landingZone {
-    border: 1px solid orange;
-
-   
-    
+ 
 }
 .landing {
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
-    border: solid 2px black;
-    display: flex;
+    border: solid 1px black;
     display: inline-block;
-    margin: 10px;
+    margin: 5px;
     background-color: rgba(20, 10, 20, 0.4);
 }
 .palette {
-    border: 1px solid blue;
-
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px 15px 10px 15px;
+    justify-content: center;
 }
 
-.holdingMoving{ //the marble thats being moved
-
-}
 .landingHover{ 
     border: 2px dashed yellow;
 }
@@ -236,33 +235,7 @@ color: rgb(0, 100, 100)
     border: none;
 }
 
-#submit {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    background-color: rgb(104, 211, 179, 0.541);
-    width:80px;
-    
-    
-    text-align: center;
-    /* border: solid 1px black; */
-    border-radius: 7%;
-}
-#reset {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    background-color: rgba(78, 172, 144, 0.541);
-    width:80px;
-    
-    
-    text-align: center;
-    /* border: solid 1px black; */
-    border-radius: 7%;
-}
-#newGame{
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    background-color: rgba(53, 116, 97, 0.541);
-    width:80px;
-    
-    
-    text-align: center;
-    /* border: solid 1px black; */
-    border-radius: 7%;
+.submitReady {
+    background-color: rgba(104, 211, 179, 0.8);
+    border: 1px solid white;
 }
