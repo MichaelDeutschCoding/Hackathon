@@ -28,12 +28,8 @@
                     <div class="logo"></div>
                 </div>
                 <div class="boardBody">
-                    <div class="guessArea">
-
-                    </div>
-                    <div class="resultsArea" >
-
-                    </div>
+                    <div class="guessArea"></div>
+                    <div class="resultsArea" ></div>
                 </div>
             </div>
             <div class='inputArea'>
@@ -44,8 +40,6 @@
                     <div class='landing'></div>
                 </div>
                 <div class='palette'>
-                        
-                        
                     <div class='marble' draggable="true" id="A"></div>
                     <div class='marble' draggable="true" id="B"></div>
                     <div class='marble' draggable="true" id="C"></div>
@@ -62,7 +56,6 @@
             </div>
         </div>
 
-
         <!-- Central Modal Medium Success -->
 
         <div class="modal fade" id="winningModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -73,7 +66,6 @@
             <!--Header-->
             <div class="modal-header-won">
                 <p class="heading lead">You won!</p>
-
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true" class="white-text">&times;</span>
                 </button>
@@ -101,27 +93,21 @@
         <!-- Modal -->
         <div class="modal fade" id="losingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
-
-        <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
-        <div class="modal-dialog modal-dialog-centered" role="document">
-
-
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">You Lose!</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">You Lose!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Pathetic<br>You had <strong>10 guesses</strong> and still couldn't manage to crack the code!</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No Way!</button>
+                        <button type="button" class="btn btn-primary" onclick="newGame()">Yeah, why not</button>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-            Pathetic<br>You had <strong>10 guesses</strong> and still couldn't manage to crack the code!
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">No Way!</button>
-            <button type="button" class="btn btn-primary" onclick="newGame()">Yeah, why not</button>
-            </div>
-        </div>
-        </div>
         </div>
         
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
