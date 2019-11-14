@@ -120,6 +120,13 @@ function analyzeGuess(code, guess) {
     return [guess, blacks, whites];
 }
 
+function removeBorders () {
+    let allDivs = document.getElementsByTagName("div")
+    for (elem of allDivs) {
+        elem.style.border = "none";
+    }
+}
+
 function display(result) {
 
     let currRow = 9-turnNum;
