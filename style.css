@@ -46,18 +46,19 @@ body {
     height: 580px;
     width: 240px;
     background-color: rgba(104, 211, 179, 0.541);
-    border-radius: 7%;
+    border-radius: 8%;
     /* border: solid 2px green; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+   padding-top: 20px;
 }
 
 .inputArea {
     height: 500px;
     margin: 20px;
     width: 300px;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     
     
 
@@ -102,14 +103,19 @@ body {
 }
 .logo{
     /* border: solid 1px yellow; */
-    width: 40%;
+    width: 35%;
+    /* height:100%; */
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    /* border: 1px solid greenyellow; */
+    /* margin-right: 20px; */
 }
-
 .secretPeg{
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 1px solid rgb(4, 255, 234);
+    border: 1px solid rgb(158, 180, 178);
     background-color: rgb(32, 32, 32);
     display: inline-block;
 }
@@ -142,7 +148,7 @@ body {
 }
 
 .landingZone {
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
 
    
     
@@ -158,7 +164,7 @@ body {
     background-color: rgba(20, 10, 20, 0.4);
 }
 .palette {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 
 }
 
@@ -169,15 +175,8 @@ body {
     border: 2px dashed yellow;
 }
 
-
-h1{
-    font-family: 'Righteous', cursive;
-    text-align: center;
-    color: rgb(0, 100, 100)
-}
-
 .line{
-    background-color: rgb(0, 100, 100);
+    background-color: rgb(20, 10, 20, 0.4);
     height: 4px;
     margin-left: 4px;
     margin-top: 8px;
@@ -268,6 +267,45 @@ h1{
 
 .modal-header-won {
     background-color: rgb(53, 116, 97, 0.541);
-    color: white;
+    color: rgb(226, 225, 225);
     font-weight: 500;
 }
+.white-text{
+    padding-right: 15px;
+    margin-bottom: 15px;
+    height:100px;
+    color: black;
+    
+}
+.btn{
+    font-family: 'Orbitron', sans-serif;
+    background-color: rgb(226, 225, 225);
+}
+.modal-body{
+    background-color: rgb(226, 225, 225);
+}
+.modal-footer{
+    background-color: rgb(53, 116, 97, 0.541)
+}
+.btn :hover{
+    background-color: rgb(226, 225, 225);
+}
+
+.neon {
+    color: #fff;
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 40px #0ff,
+      0 0 80px #0ff,
+      0 0 90px #0ff,
+      0 0 100px #0ff,
+      0 0 150px #0ff;
+  }
+  h1 {
+    font-weight: 100;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Righteous', cursive;
+  }
