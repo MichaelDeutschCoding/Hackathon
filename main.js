@@ -1,3 +1,22 @@
+let ga = document.getElementsByClassName("guessArea")[0];
+let ra = document.getElementsByClassName("resultsArea")[0];
+for (let i=0; i< 10; i++) {
+    let guess = document.createElement("div");
+    guess.classList.add("guess");
+    ga.appendChild(guess);
+    let result = document.createElement("div");
+    result.classList.add("result");
+    ra.appendChild(result)
+    for (let j = 0; j<4; j++) {
+        let p = document.createElement("div");
+        p.classList.add("peg");
+        let s = document.createElement('div');
+        s.classList.add("scorePeg");
+        guess.appendChild(p);
+        result.appendChild(s);
+    }
+}
+
 let landzone = document.getElementsByClassName("landing");
 let marbles = document.getElementsByClassName("marble");
 let guessRows = document.getElementsByClassName("guess");
@@ -17,10 +36,6 @@ function generateRandomCode() {
 }
 
 function newGame() {
-
-
-    $('#winningModal').modal('hide')
-    $('#losingModal').modal('hide')
 
     clearGuess();
     for (elem of document.getElementsByClassName("peg")){
@@ -45,16 +60,12 @@ function reveal() {
 
 function won() {
     console.log("You win!");
-    // alert("Winner!");
     reveal();
-    $("#winningModal").modal("toggle");
 }
 
 function lost() {
     console.log("You Lose!");
     reveal();
-    $("#losingModal").modal("toggle");
-
 }
 
 function onDragStart(event){
@@ -111,9 +122,7 @@ function submitGuess() {
     let result = analyzeGuess(code, currentGuess);
     console.log(result);
     display(result);
-    
     clearGuess();
-
 }
 
 function analyzeGuess(code, guess) {
@@ -180,6 +189,3 @@ code = ["A", "B", "C", "D"];
 
 let g1 = ["B", "B", "D", "A"];
 let g2 = ["D", "C", "D", "F"];
-
-
-// #50c853
