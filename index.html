@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mastermind</title>
+        <script src="https://kit.fontawesome.com/694072c986.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
         <script defer src="main.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Cinzel|Monoton|Orbitron|Press+Start+2P|Righteous&display=swap" rel="stylesheet">
@@ -169,6 +171,74 @@
                 <div id='reset'>Reset</div>
                 <div id='newGame'>New Game</div>
             </div>
-        </div>    
+        </div>
+
+
+        <!-- Central Modal Medium Success -->
+
+        <div class="modal fade" id="winningModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-success" role="document">
+            <!--Content-->
+            <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header-won">
+                <p class="heading lead">You won!</p>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="text-center">
+                <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+                <p>Congratulations!<br>You solved the code. Way to go!</p>
+                </div>
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+                <a type="button" class="btn btn-success" onclick="newGame()">Play again?</a>
+                <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">No, thanks</a>
+            </div>
+            </div>
+            <!--/.Content-->
+        </div>
+        </div>
+<!-- Central Modal Medium Success-->
+
+        <!-- Modal -->
+        <div class="modal fade" id="losingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+
+        <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+        <div class="modal-dialog modal-dialog-centered" role="document">
+
+
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">You Lose!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            Pathetic<br>You had <strong>10 guesses</strong> and still couldn't manage to crack the code!
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No Way!</button>
+            <button type="button" class="btn btn-primary" onclick="newGame()">Yeah, why not</button>
+            </div>
+        </div>
+        </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
     </body>
     </html>
+
+
