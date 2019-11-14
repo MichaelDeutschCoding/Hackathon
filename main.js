@@ -18,7 +18,10 @@ function generateRandomCode() {
 
 function newGame() {
 
-    // set board and input display to be visible
+
+    $('#winningModal').modal('hide')
+    $('#losingModal').modal('hide')
+
     clearGuess();
     for (elem of document.getElementsByClassName("peg")){
         elem.className = "peg";
@@ -42,14 +45,16 @@ function reveal() {
 
 function won() {
     console.log("You win!");
-    alert("Winner!");
+    // alert("Winner!");
     reveal();
+    $("#winningModal").modal("toggle");
 }
 
 function lost() {
     console.log("You Lose!");
-    alert("You lose!");
     reveal();
+    $("#losingModal").modal("toggle");
+
 }
 
 function onDragStart(event){
@@ -175,3 +180,6 @@ code = ["A", "B", "C", "D"];
 
 let g1 = ["B", "B", "D", "A"];
 let g2 = ["D", "C", "D", "F"];
+
+
+// #50c853
