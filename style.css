@@ -159,6 +159,12 @@ body {
     border: 2px dashed yellow;
 }
 
+.modal-header-won {
+    background-color: #50c853;
+    color: white;
+    font-weight: 500;
+}
+
 h1{
 font-family: 'Righteous', cursive;
 text-align: center;
