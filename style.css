@@ -23,7 +23,6 @@ body {
     border-radius:50%;
     margin: 10px;
     display: inline-block;
-
 }
 
 .peg {
@@ -204,33 +203,37 @@ color: rgb(0, 100, 100)
 }
 
 .A, #A {
-    background-color: rgb(17, 92, 143);
-    border: solid 1px whitesmoke;
-    /* background-image: url(images/A.png); */
-    
-    
+    background-image: url(images/A.png);
+    background-size: cover;
+    border: none;
+
     
 }
 .B, #B {
-    background-color: rgb(129, 51, 51);
-    border: solid 1px whitesmoke;
+    background-image: url(images/B.png);
+    background-size: cover;
+    border: none;
     
 }
 .C, #C {
-    background-color: rgb(214, 153, 39);
-    border: solid 1px whitesmoke;
+    background: url(images/C.png);
+    background-size: cover;
+    border:none;
 }
 .D, #D {
-    background-color: rgb(128, 39, 128);
-    border: solid 1px whitesmoke;
+    background-image: url(images/D.png);
+    background-size: cover;
+    border: none;
 }
 .E, #E {
-    background-color: rgb(180, 180, 77);
-    border: solid 1px whitesmoke;
+    background-image: url(images/E.png);
+    background-size: cover;
+    border: none;
 }
 .F, #F {
-    background-color: rgb(96, 170, 96);
-    border: solid 1px whitesmoke;
+    background-image: url(images/F.png);
+    background-size: cover;
+    border: none;
 }
 
 #submit {
