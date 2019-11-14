@@ -2,7 +2,7 @@ let landzone = document.getElementsByClassName("landing");
 let marbles = document.getElementsByClassName("marble");
 let guessRows = document.getElementsByClassName("guess");
 let resultRows = document.getElementsByClassName("result");
-let secretPegs = document.getElementsByClassName("secretPegs");
+let secretPegs = document.getElementsByClassName("secretPeg");
 let submitButton = document.getElementById("submit");
 const colors = ["A", "B", "C", "D", "E", "F"];
 let turnNum;
@@ -20,27 +20,40 @@ function newGame() {
 
     // set board and input display to be visible
     clearGuess();
-    for (d of document.getElementsByClassName("peg")){
-        d.className = "peg";
+    for (elem of document.getElementsByClassName("peg")){
+        elem.className = "peg";
     }
-    for (d of document.getElementsByClassName("scorePeg")) {
-        d.className = "scorePeg";
+    for (elem of document.getElementsByClassName("scorePeg")) {
+        elem.className = "scorePeg";
+    }
+    for (elem of secretPegs){
+        elem.className = "secretPeg";
     }
 
     turnNum = 0;
     code = generateRandomCode();
 }
 
-function gameOver() {
+function reveal() {
     for (i in code) {
         secretPegs[i].classList.add(code[i]);
     }
-    let answer = prompt("Do you want to play again?")
+}
+
+function won() {
+    console.log("You win!");
+    alert("Winner!");
+    reveal();
+}
+
+function lost() {
+    console.log("You Lose!");
+    alert("You lose!");
+    reveal();
 }
 
 function onDragStart(event){
     event.dataTransfer.setData("text/plain", event.target.id)
-    event.currentTarget.classList.add("holdingSource");
 }
 
 function dragEnded(event) {
@@ -120,13 +133,6 @@ function analyzeGuess(code, guess) {
     return [guess, blacks, whites];
 }
 
-function removeBorders () {
-    let allDivs = document.getElementsByTagName("div")
-    for (elem of allDivs) {
-        elem.style.border = "none";
-    }
-}
-
 function display(result) {
 
     let currRow = 9-turnNum;
@@ -144,17 +150,9 @@ function display(result) {
         i++;
     }
 
-    if (result[1] == 4) {
-        console.log("You win!");
-        gameOver();
-        return;
-    }
-    if (turnNum == 9) {
-        console.log("You Lose!");
-        gameOver();
-        return;
-    }
-    turnNum++;
+    if (result[1] == 4) {won();}
+    else if (turnNum == 9) {lost();}
+    else{turnNum++;}
 }
 
 document.getElementById("reset").addEventListener("click", clearGuess);
