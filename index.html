@@ -9,7 +9,9 @@
         <link rel="stylesheet" href="style.css">
         <script defer src="main.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Cinzel|Monoton|Orbitron|Press+Start+2P|Righteous&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron|Yanone+Kaffeesatz&display=swap" rel="stylesheet">
 
+        <script src="https://kit.fontawesome.com/6a2f886324.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header><h1>MasterMind 2.0</h1></header>
@@ -160,6 +162,8 @@
                     <div class='landing'></div>
                 </div>
                 <div class='palette'>
+                        
+                        
                     <div class='marble' draggable="true" id="A"></div>
                     <div class='marble' draggable="true" id="B"></div>
                     <div class='marble' draggable="true" id="C"></div>
@@ -167,9 +171,12 @@
                     <div class='marble' draggable="true" id="E"></div>
                     <div class='marble' draggable="true" id="F"></div>
                 </div>
-                <div id='submit' class="submitUnready">Submit</div>
-                <div id='reset'>Reset</div>
-                <div id='newGame'>New Game</div>
+                
+                <div id='submit' class="submitUnready">Submit<span> </span><i class="fas fa-sign-in-alt"></i></i></div>
+                <div id='reset'><i class="fas fa-backward"></i><span>
+                </span>Reset</div>
+                <div id='newGame'>New<span> </span><i class="fas fa-play-circle"></i><span> </span>Game</div>
+                
             </div>
         </div>
 
@@ -240,5 +247,3 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
     </body>
     </html>
-
-
