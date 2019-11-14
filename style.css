@@ -4,8 +4,6 @@
 body {
     background-image: url(images/nebula.jpg);
     background-size: auto 100vh;
-    
-    
    }
 
 .submitReady {
@@ -66,8 +64,8 @@ body {
 .boardHead{
     display: flex;
     height:10%;
-    
-}
+}   
+
 .guessArea { 
    padding-top: 5px;
    margin-right: 20px;
@@ -77,7 +75,6 @@ body {
    display: flex;
    flex-direction: column;
    justify-content: space-around;
-  
    
 }
 .guess {
@@ -87,9 +84,8 @@ body {
     /* border: solid 1px blue; */
     
     padding-top: 5px;
-    
-   
 }
+
 .peg {
     width: 30px;
     height: 30px;
@@ -113,6 +109,13 @@ body {
     width: 40%;
 }
 
+.peg {
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+    display: inline-block;
+}
+
 .secretPeg{
     width: 30px;
     height: 30px;
@@ -128,21 +131,18 @@ body {
    flex-direction: column;
    justify-content: space-around;
    height:100%;
-  
-    
 }
+
 .result {
     /* border: 1px solid yellow; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 35px;
-    
-    
-   
 }
+
 .scorePeg {
-     width: 7px;
+    width: 7px;
     height: 7px;
     border-radius: 50%;
     border: 1px solid rgb(28, 75, 71);
@@ -150,6 +150,7 @@ body {
     display: inline-block;
     margin: 2px 3px;
 }
+
 .inputArea {
     width:45%;
 
@@ -174,25 +175,29 @@ body {
 .holdingMoving{ //the marble thats being moved
 
 }
-.landingHover{ //landing spot while marble is over it
-
+.landingHover{ 
+    border: 2px dashed yellow;
 }
 h1{
 font-family: 'Righteous', cursive;
 text-align: center;
 color: rgb(0, 100, 100)
-}
-.hrColor{
-    color: rgb(65, 63, 63);
+
 }
 
 .line{
-    /* display: block; */
     background-color: rgb(0, 100, 100);
     height: 4px;
     margin-left: 4px;
     margin-top: 8px;
     width:100%;
     border-radius: 20%;
+}
 
-  }
+.blackPeg {
+    background-color: black;
+}
+
+.whitePeg {
+    background-color: white;
+}
