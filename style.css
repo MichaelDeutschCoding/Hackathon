@@ -1,3 +1,12 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    background-image: url(images/nebula.jpg);
+    background-size: auto 100vh;
+    
+    
+   }
 
 .submitReady {
     background-color: purple;
@@ -35,45 +44,114 @@
 }
 
 .board {
-    height: 650px;
-    width: 450px;
-    /* border: solid 2px black; */
-    background-color: rgb(238, 228, 141);
+    height: 580px;
+    width: 240px;
+    background-color: rgba(104, 211, 179, 0.541);
+    margin-left: 40%;
+    border-radius: 7%;
+    /* border: solid 2px green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.boardBody{
+    display: flex;
+    border: solid 2px green;
+    justify-content: center;
+    height:100%;
+    padding: 10px 5px;
+    
+
+}
+.boardHead{
+    display: flex;
+    height:10%;
+    
 }
 .guessArea { 
-    /* height:30px;
-    width: 120px;
-    border: solid 2px black; */
-
+   padding-top: 5px;
+   margin-right: 20px;
+   /* border:solid 1px red; */
+   width:60%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+  
+   
 }
 .guess {
-    height:40px;
-    width: 300px;
+    height:10%;
+    width:100%;
+    /* margin-bottom: 1%; */
+    /* border: solid 1px blue; */
     
+    padding-top: 5px;
     
-    
-
+   
 }
 .peg {
-
-}
-.resultArea {
-
-}
-.result {
-
-}
-.scorePeg {
-    /* width: 30px;
+    width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 1px solid black; 
-    background-color: rgb(161, 136, 104);   
+    border: 1px solid rgb(28, 75, 71); 
+    background-color: rgb(32, 32, 32);   
     display: inline-block;
-    padding: 6.5px; */
+ 
+    
+}
+.secret{
+    width:60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* border:solid 1px red; */
+    margin: 10px;
+}
+.logo{
+    /* border: solid 1px yellow; */
+    width: 40%;
+}
 
+.secretPeg{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgb(4, 255, 234);
+    background-color: rgb(32, 32, 32);
+    display: inline-block;
+}
+.resultsArea {
+    /* border: solid 1px rgb(4, 238, 70); */
+    width: 15%;
+    display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   height:100%;
+  
+    
+}
+.result {
+    /* border: 1px solid yellow; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 35px;
+    
+    
+   
+}
+.scorePeg {
+     width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1px solid rgb(28, 75, 71);
+    background-color: black;   
+    display: inline-block;
+    margin: 2px 3px;
 }
 .inputArea {
+    width:45%;
 
 }
 .landingZone {
@@ -83,10 +161,9 @@
     height: 100px;
     width: 100px;
     border: solid 2px black;
+    display: flex;
     display: inline-block;
     margin: 10px;
-
-
 }
 .palette {
 
@@ -100,8 +177,22 @@
 .landingHover{ //landing spot while marble is over it
 
 }
-body{
-    background-color: rgb(69, 69, 73);
-    display: flex;
+h1{
+font-family: 'Righteous', cursive;
+text-align: center;
+color: rgb(0, 100, 100)
+}
+.hrColor{
+    color: rgb(65, 63, 63);
 }
 
+.line{
+    /* display: block; */
+    background-color: rgb(0, 100, 100);
+    height: 4px;
+    margin-left: 4px;
+    margin-top: 8px;
+    width:100%;
+    border-radius: 20%;
+
+  }

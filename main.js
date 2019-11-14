@@ -106,3 +106,12 @@ function analyzeGuess(guess, code) {
     console.log("Blacks:", blacks, "Whites:", whites);
     return [blacks, whites]
 }
+
+let allDivs = document.getElementsByTagName("div")
+
+function removeBorders () {
+    for (elem of allDivs) {
+        elem.style.border = "none";
+    }
+}
+
