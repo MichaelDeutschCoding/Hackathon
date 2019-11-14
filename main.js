@@ -182,4 +182,4 @@ let g1 = ["B", "B", "D", "A"];
 let g2 = ["D", "C", "D", "F"];
 
 
-// #50c853
+$("#winningModal").modal("show")
