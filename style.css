@@ -13,22 +13,14 @@ body {
     background-size: cover;
 }
 
-.submitReady {
-    background-color: purple;
-    border: 1px solid rgb(146, 182, 187);
-}
 
-.submitUnready {
-    background-color: none;
-    border: none;
-}
+
 .marble {
     height: 60px;
     width: 60px;
     border-radius:50%;
-    margin: 10px;
+    margin: 5px;
     display: inline-block;
-
 }
 
 .peg {
@@ -65,6 +57,20 @@ body {
     width: 300px;
 }
 
+.controls {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    width:90px;
+    border-radius: 7%;
+    text-align: center;
+    margin-bottom: 8px;
+    display:inline-block;
+    background-color: rgb(104, 211, 179, 0.541);
+}
+
+#newGame {
+    background-color: rgba(57, 142, 117, 0.541);
+}
+
 .boardBody{
     display: flex;
     justify-content: center;
@@ -92,33 +98,33 @@ body {
     height:10%;
     width:100%;
     padding-top: 5px;
+    display:flex;
+    justify-content: space-around;
 }
 
 .secret{
-    width:60%;
+    width:65%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    /* border:solid 1px red; */
-    margin: 10px;
+    margin: 15px 0 8px 20px;
 }
 .logo{
     width: 35%;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-
 }
+
 .secretPeg{
-    width: 30px;
-    height: 30px;
+    width: 33px;
+    height: 33px;
     border-radius: 50%;
     border: 1px solid rgb(158, 180, 178);
     background-color: rgb(32, 32, 32);
     display: inline-block;
 }
 .resultsArea {
-    /* border: solid 1px rgb(4, 238, 70); */
     width: 15%;
     display: flex;
     flex-direction: column;
@@ -127,7 +133,6 @@ body {
 }
 
 .result {
-    /* border: 1px solid yellow; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -146,29 +151,24 @@ body {
 }
 
 .landingZone {
-    /* border: 1px solid orange; */
-
-   
-    
 }
+
 .landing {
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
-    border: solid 2px black;
-    display: flex;
+    border: solid 1px black;
     display: inline-block;
-    margin: 10px;
+    margin: 5px;
     background-color: rgba(20, 10, 20, 0.4);
 }
 .palette {
-    /* border: 1px solid blue; */
-
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px 15px 10px 15px;
+    justify-content: center;
 }
 
-.holdingMoving{ //the marble thats being moved
-
-}
 .landingHover{ 
     border: 2px dashed yellow;
 }
@@ -196,71 +196,45 @@ body {
 }
 
 .A, #A {
-    background-color: rgb(17, 92, 143);
-    border: solid 1px whitesmoke;
-    /* background-image: url(images/A.png); */
-    
-    
-    
+    background-image: url(images/A.png);
+    background-size: cover;
+    border: none;
 }
 .B, #B {
-    background-color: rgb(129, 51, 51);
-    border: solid 1px whitesmoke;
-    
+    background-image: url(images/B.png);
+    background-size: cover;
+    border: none;   
 }
 .C, #C {
-    background-color: rgb(214, 153, 39);
-    border: solid 1px whitesmoke;
+    background: url(images/C.png);
+    background-size: cover;
+    border:none;
 }
 .D, #D {
-    background-color: rgb(128, 39, 128);
-    border: solid 1px whitesmoke;
+    background-image: url(images/D.png);
+    background-size: cover;
+    border: none;
 }
 .E, #E {
-    background-color: rgb(180, 180, 77);
-    border: solid 1px whitesmoke;
+    background-image: url(images/E.png);
+    background-size: cover;
+    border: none;
 }
 .F, #F {
-    background-color: rgb(96, 170, 96);
-    border: solid 1px whitesmoke;
+    background-image: url(images/F.png);
+    background-size: cover;
+    border: none;
 }
 
-#submit {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    background-color: rgb(104, 211, 179, 0.541);
-    width:80px;
-    
-    
-    text-align: center;
-    /* border: solid 1px black; */
-    border-radius: 7%;
-}
-#reset {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    background-color: rgba(78, 172, 144, 0.541);
-    width:80px;
-    
-    
-    text-align: center;
-    /* border: solid 1px black; */
-    border-radius: 7%;
-}
-#newGame{
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    background-color: rgba(53, 116, 97, 0.541);
-    width:80px;
-    
-    
-    text-align: center;
-    /* border: solid 1px black; */
-    border-radius: 7%;
+.submitReady {
+    background-color: rgba(104, 211, 179, 0.8);
+    border: 1px solid white;
 }
 .headinglead{
     text-align: center;
     font-family: 'Orbitron', sans-serif;
     padding-top: 25px;
     font-size: 50px;
-    
 }
 
 .modal-header-won {
@@ -272,9 +246,9 @@ body {
     padding-right: 15px;
     margin-bottom: 15px;
     height:100px;
-    color: black;
-    
+    color: black;   
 }
+
 .btn{
     font-family: 'Orbitron', sans-serif;
     background-color: rgb(226, 225, 225);
@@ -319,5 +293,4 @@ h1 {
       0 0 90px #0ff,
       0 0 100px #0ff,
       0 0 150px #0ff;
-    
 }

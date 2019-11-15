@@ -1,3 +1,22 @@
+let ga = document.getElementsByClassName("guessArea")[0];
+let ra = document.getElementsByClassName("resultsArea")[0];
+for (let i=0; i< 10; i++) {
+    let guess = document.createElement("div");
+    guess.classList.add("guess");
+    ga.appendChild(guess);
+    let result = document.createElement("div");
+    result.classList.add("result");
+    ra.appendChild(result)
+    for (let j = 0; j<4; j++) {
+        let p = document.createElement("div");
+        p.classList.add("peg");
+        let s = document.createElement('div');
+        s.classList.add("scorePeg");
+        guess.appendChild(p);
+        result.appendChild(s);
+    }
+}
+
 let landzone = document.getElementsByClassName("landing");
 let marbles = document.getElementsByClassName("marble");
 let guessRows = document.getElementsByClassName("guess");
@@ -17,8 +36,10 @@ function generateRandomCode() {
 }
 
 function newGame() {
-    $('#winningModal').modal('hide')
-    $('#losingModal').modal('hide')
+
+    $('#winningModal').modal('hide');
+    $('#losingModal').modal('hide');
+
     clearGuess();
     for (elem of document.getElementsByClassName("peg")){
         elem.className = "peg";
@@ -42,19 +63,18 @@ function reveal() {
 
 function won() {
     console.log("You win!");
-    // alert("Winner!");
     reveal();
-    $("#winningModal").modal("toggle");
+    $('#winningModal').modal('show');
 }
 
 function lost() {
     console.log("You Lose!");
     reveal();
-    $("#losingModal").modal("toggle");
+    $('#losingModal').modal('show');
 }
 
 function onDragStart(event){
-    event.dataTransfer.setData("text/plain", event.target.id)
+    event.dataTransfer.setData("text/plain", event.target.id);
 }
 
 function dragEnded(event) {
@@ -82,18 +102,18 @@ function clearGuess() {
     for (z of landzone) {
         z.classList = "landing";
     }
-    submitButton.className = "submitUnready";
+    submitButton.classList.remove("submitReady");
 }
 
 function validate() {
     for (z of landzone) {
         if (z.classList.length < 2){
-            submitButton.className = "submitUnready";
+            submitButton.classList.remove("submitReady");
             return false;
         }
     }
     console.log("Ready to roll, boss!")
-    submitButton.className = "submitReady";
+    submitButton.classList.add("submitReady");
     return true;
 }
 
@@ -107,9 +127,7 @@ function submitGuess() {
     let result = analyzeGuess(code, currentGuess);
     console.log(result);
     display(result);
-    
     clearGuess();
-
 }
 
 function analyzeGuess(code, guess) {
@@ -137,7 +155,6 @@ function analyzeGuess(code, guess) {
 function display(result) {
 
     let currRow = 9-turnNum;
-
     for (let i=0; i<4; i++) {
         guessRows[currRow].children[i].classList.add(result[0][i]);
     }
@@ -170,6 +187,9 @@ for (z of landzone) {
     z.addEventListener("dragleave", dragLeave);
     z.addEventListener("drop", drop);
 }
+
+
+//for testing --> remove before release
 turnNum = 0;
 code = ["A", "B", "C", "D"];
 
