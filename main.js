@@ -17,11 +17,8 @@ function generateRandomCode() {
 }
 
 function newGame() {
-
-
     $('#winningModal').modal('hide')
     $('#losingModal').modal('hide')
-
     clearGuess();
     for (elem of document.getElementsByClassName("peg")){
         elem.className = "peg";
@@ -54,7 +51,6 @@ function lost() {
     console.log("You Lose!");
     reveal();
     $("#losingModal").modal("toggle");
-
 }
 
 function onDragStart(event){
@@ -177,9 +173,7 @@ for (z of landzone) {
 turnNum = 0;
 code = ["A", "B", "C", "D"];
 
-
 let g1 = ["B", "B", "D", "A"];
 let g2 = ["D", "C", "D", "F"];
 
-
-$("#winningModal").modal("show")
+// $("#winningModal").modal("show")

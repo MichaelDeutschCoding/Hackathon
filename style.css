@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+.title {
+    padding-top: 10px;
+    padding-bottom: 0;
+}
+
 body {
     background-image: url(images/nebula.jpg);
     background-repeat: no-repeat;
@@ -98,15 +103,11 @@ body {
     margin: 10px;
 }
 .logo{
-    /* border: solid 1px yellow; */
     width: 35%;
-    /* height:100%; */
     display: flex;
     justify-content: center;
-    padding-top: 20px;
-    
-    /* border: 1px solid greenyellow; */
-    /* margin-right: 20px; */
+    align-items: flex-end;
+
 }
 .secretPeg{
     width: 30px;
