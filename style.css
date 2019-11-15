@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+.title {
+    padding-top: 10px;
+    padding-bottom: 0;
+}
+
 body {
     background-image: url(images/nebula.jpg);
     background-repeat: no-repeat;
@@ -38,11 +43,12 @@ body {
     height: 580px;
     width: 240px;
     background-color: rgba(104, 211, 179, 0.541);
-    border-radius: 7%;
+    border-radius: 10%;
     /* border: solid 2px green; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+   padding-top: 10px;
 }
 
 .inputArea {
@@ -104,20 +110,21 @@ body {
     margin: 15px 0 8px 20px;
 }
 .logo{
-    /* border: solid 1px yellow; */
-    width: 30%;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .secretPeg{
     width: 33px;
     height: 33px;
     border-radius: 50%;
-    border: 1px solid rgb(4, 255, 234);
+    border: 1px solid rgb(158, 180, 178);
     background-color: rgb(32, 32, 32);
     display: inline-block;
 }
 .resultsArea {
-    /* border: solid 1px rgb(4, 238, 70); */
     width: 15%;
     display: flex;
     flex-direction: column;
@@ -126,7 +133,6 @@ body {
 }
 
 .result {
-    /* border: 1px solid yellow; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -145,8 +151,8 @@ body {
 }
 
 .landingZone {
- 
 }
+
 .landing {
     height: 60px;
     width: 60px;
@@ -167,20 +173,8 @@ body {
     border: 2px dashed yellow;
 }
 
-.modal-header-won {
-    background-color: #50c853;
-    color: white;
-    font-weight: 500;
-}
-
-h1{
-font-family: 'Righteous', cursive;
-text-align: center;
-color: rgb(0, 100, 100)
-}
-
 .line{
-    background-color: rgb(0, 100, 100);
+    background-color: rgb(20, 10, 20, 0.4);
     height: 4px;
     margin-left: 4px;
     margin-top: 8px;
@@ -205,14 +199,11 @@ color: rgb(0, 100, 100)
     background-image: url(images/A.png);
     background-size: cover;
     border: none;
-
-    
 }
 .B, #B {
     background-image: url(images/B.png);
     background-size: cover;
-    border: none;
-    
+    border: none;   
 }
 .C, #C {
     background: url(images/C.png);
@@ -238,4 +229,68 @@ color: rgb(0, 100, 100)
 .submitReady {
     background-color: rgba(104, 211, 179, 0.8);
     border: 1px solid white;
+}
+.headinglead{
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    padding-top: 25px;
+    font-size: 50px;
+}
+
+.modal-header-won {
+    background-color: rgb(53, 116, 97, 0.541);
+    color: rgb(226, 225, 225);
+    font-weight: 500;
+}
+.white-text{
+    padding-right: 15px;
+    margin-bottom: 15px;
+    height:100px;
+    color: black;   
+}
+
+.btn{
+    font-family: 'Orbitron', sans-serif;
+    background-color: rgb(226, 225, 225);
+}
+.modal-body{
+    background-color: rgb(226, 225, 225);
+}
+.modal-footer{
+    background-color: rgb(53, 116, 97, 0.541)
+}
+.btn :hover{
+    background-color: rgb(226, 225, 225);
+}
+
+.neon {
+    color: #fff;
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 40px #0ff,
+      0 0 80px #0ff,
+      0 0 90px #0ff,
+      0 0 100px #0ff,
+      0 0 150px #0ff;
+  }
+h1 {
+    font-weight: 100;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Righteous', cursive;
+}
+
+.headinglead{
+    color: #fff;
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 40px #0ff,
+      0 0 80px #0ff,
+      0 0 90px #0ff,
+      0 0 100px #0ff,
+      0 0 150px #0ff;
 }
