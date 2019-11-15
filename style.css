@@ -58,10 +58,6 @@ body {
     height: 500px;
     margin: 20px;
     width: 300px;
-    /* border: 1px solid yellow; */
-    
-    
-
 }
 
 .boardBody{
@@ -304,14 +300,14 @@ body {
       0 0 100px #0ff,
       0 0 150px #0ff;
   }
-  h1 {
+h1 {
     font-weight: 100;
     text-align: center;
     text-transform: uppercase;
     font-family: 'Righteous', cursive;
-  }
+}
 
-  .headinglead{
+.headinglead{
     color: #fff;
     text-shadow:
       0 0 5px #fff,
@@ -323,4 +319,4 @@ body {
       0 0 100px #0ff,
       0 0 150px #0ff;
     
-  }
+}
