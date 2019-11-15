@@ -294,3 +294,31 @@ h1 {
       0 0 100px #0ff,
       0 0 150px #0ff;
 }
+.controls {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    width:90px;
+    border-radius: 7%;
+    text-align: center;
+    margin-bottom: 8px;
+    display:inline-block;
+    background-color: rgb(104, 211, 179, 0.541);
+    padding: 15px 25px;
+    /* font-size: 24px;
+    text-align: center; */
+    cursor: pointer;
+    outline: none;
+    /* color: #fff; */
+    /* background-color: #4CAF50; */
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .controls:hover {background-color:rgba(57, 142, 117, 0.541)}
+  
+  .controls:active {
+    background-color: rgba(57, 142, 117, 0.541);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    color: white;
+  }
