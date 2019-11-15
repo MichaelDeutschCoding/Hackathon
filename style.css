@@ -13,14 +13,17 @@ body {
     background-size: cover;
 }
 
-
-
 .marble {
     height: 60px;
     width: 60px;
     border-radius:50%;
     margin: 5px;
     display: inline-block;
+    transition: all .2s linear;
+}
+
+.marble:hover {
+    transform: scale(1.1);
 }
 
 .peg {
@@ -149,9 +152,9 @@ body {
     display: inline-block;
     margin: 2px 3px;
 }
-
+/* 
 .landingZone {
-}
+} */
 
 .landing {
     height: 60px;
@@ -161,6 +164,7 @@ body {
     display: inline-block;
     margin: 5px;
     background-color: rgba(20, 10, 20, 0.4);
+    transition: all .2s linear;
 }
 .palette {
     display: flex;
@@ -171,6 +175,7 @@ body {
 
 .landingHover{ 
     border: 2px dashed yellow;
+    transform: scale(1.2);
 }
 
 .line{
@@ -195,6 +200,13 @@ body {
     border: 1px solid black;
 }
 
+.tab-content {
+    height: 300px;
+    padding: 8px;
+    overflow-y: auto;
+    background-color:white;
+}
+
 .A, #A {
     background-image: url(images/A.png);
     background-size: cover;
@@ -206,7 +218,7 @@ body {
     border: none;   
 }
 .C, #C {
-    background: url(images/C.png);
+    background-image: url(images/C.png);
     background-size: cover;
     border:none;
 }
@@ -249,6 +261,10 @@ body {
     color: black;   
 }
 
+.info-modal-footer {
+    background-color: rgb(226, 225, 225);
+}
+
 .btn{
     font-family: 'Orbitron', sans-serif;
     background-color: rgb(226, 225, 225);
@@ -256,11 +272,15 @@ body {
 .modal-body{
     background-color: rgb(226, 225, 225);
 }
-.modal-footer{
+.modal-footer-won{
     background-color: rgb(53, 116, 97, 0.541)
 }
-.btn :hover{
+.btn :hover, btn-secondary:hover{
     background-color: rgb(226, 225, 225);
+}
+.btn-secondary {
+    background-color: white;
+    color: #007bff
 }
 
 .neon {
