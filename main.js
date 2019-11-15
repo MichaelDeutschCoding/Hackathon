@@ -196,4 +196,4 @@ code = ["A", "B", "C", "D"];
 let g1 = ["B", "B", "D", "A"];
 let g2 = ["D", "C", "D", "F"];
 
-// $("#winningModal").modal("show")
+$("#infoModal").modal("show")

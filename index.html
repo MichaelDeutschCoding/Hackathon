@@ -60,6 +60,50 @@
             </div>
         </div>
 
+
+        <!-- Info Modal -->
+        <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">About Mastermind</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item"><a class="nav-link active" href="#overview" role="tab" data-toggle="tab">Overview</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#gameplay" role="tab" data-toggle="tab">Gameplay</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#tips" role="tab" data-toggle="tab">Tips</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about" role="tab" data-toggle="tab">About the Game</a></li>
+                        </ul>
+                        <div class="tab-content active">
+                            <div role="tabpanel" class="tab-pane active in" id="overview">
+                                <p>The object of Mastermind is to correctly guess the Codemaster's secret code in as few guesses as possible. You gain information about the code by submitting guesses and analyzing the Codemaster's responses.  If you can accurately determine the exact code that was hidden within 10 guesses, you win!</p><p>Now get cracking!</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="gameplay">
+                                <p>The Codemaster chooses a secret code of four pegs, made from any combination of the six colors available. Colors may be repeated, but all four spots must be used. (In our case, the computer will play this role!) The Codebreaker then submits a guess, again using any four pegs. You will then receive feedback about how accurate your guess was via the white and black pegs.</p>
+                                <p>A black peg means that one of the guessed pegs was the correct color in the correct location. Every white peg indicates one of the guessed pegs was in the code, but is not in the correct location. <strong>The order of the black and white pegs do not imply anything about the code.</strong> If a color is repeated in the guess, but not repeated in the secret code, it will only score one peg (black if in the correct location, white otherwise). Using the clues given, you can identify patterns signalling what colors must be in the code, and which ones defintely are not. Keep guessing until you figure out the correct code!</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tips">
+                                <p>Drag a peg from the palette to the guess zone on the right side of the board. When you are satisfied with you entry, click "Submit" to register your guess and see the results. You can remove pegs from the guess-input area by pressing "Reset". You can start a new game any time by clicking "New Game".</p>
+                                <p>Use your guesses wisely. You have only 10 chances to crack the code! Some strategies focus on identifying colors you know are <strong>not</strong> in the code, and then using those to narrow down the positions for other colors. A common starting guess would be two each of two colors. You can find some strategy tips <a href="http://codebreaker.creativitygames.net/mastermind_strategy_for_real_people.php" target="blank">here</a> and a <strong>much more</strong> extensive treatment <a href="http://www.geometer.org/mathcircles/mastermind.pdf" target="blank">here</a>.</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="about">
+                                <p>The modern version of the game, played with a board and pegs, was invented in 1970 by Mordecai Meirowitz, an Israeli postmaster and telecommunications expert. It all started with 'Bulls and Cows', an English code-breaking game of unknown origin played with paper and pencil. Each player writes a secret sequence of four numbers, and the opponent has to guess the sequence. Matching digits are called “bulls,” while wrong guesses are “cows”.</p>
+                                <p>While there are now many variations of the game, with more and fewer colors to choose from, and different numbers of pegs in the secret code, the original version, still most widely played today, uses six colors and four locations. This calculates to a total of 6<sup>4</sup> = 1,296 possible patterns for the code. In 1977, Donald Knuth demonstrated that the codebreaker can solve the pattern in five moves or fewer, using an algorithm that progressively reduces the number of possible patterns. He published a <a target="blank" href="http://www.cs.uni.edu/~wallingf/teaching/cs3530/resources/knuth-mastermind.pdf">paper about it</a> describing how a computer can identify which guesses will be the most helpful at deducing the code.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer info-modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <!-- Winning Modal -->
         <div class="modal fade" id="winningModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
@@ -73,8 +117,6 @@
                 <span aria-hidden="true" class="white-text">&times;</span>
                 </button>
             </div>
-
-            <!--Body-->
             <div class="modal-body">
                 <div class="text-center">
                         <i class="fas fa-thumbs-up fa-7x"></i>
@@ -89,7 +131,6 @@
                 <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">No, Thanks</a>
             </div>
             </div>
-            <!--/.Content-->
         </div>
         </div>
   
