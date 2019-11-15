@@ -57,6 +57,7 @@ body {
     width: 300px;
 }
 
+
 .controls {
     font-family: 'Yanone Kaffeesatz', sans-serif;
     width:90px;
@@ -65,10 +66,32 @@ body {
     margin-bottom: 8px;
     display:inline-block;
     background-color: rgb(104, 211, 179, 0.541);
-}
+    padding: 15px 25px;
+    /* font-size: 24px;
+    text-align: center; */
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 9px rgb(88, 119, 110);
+  }
+  
+  .controls:hover {background-color:rgba(173, 247, 224, 0.541)}
+
+  
+  .controls:active {
+    background-color: rgba(137, 204, 184, 0.541);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    color:black;
+  }
+
 
 #newGame {
     background-color: rgba(57, 142, 117, 0.541);
+    
 }
 
 .boardBody{
@@ -196,32 +219,32 @@ body {
 }
 
 .A, #A {
-    background-image: url(images/A.png);
+    background-image: url(LegoEmojis/batman.png);
     background-size: cover;
     border: none;
 }
 .B, #B {
-    background-image: url(images/B.png);
+    background-image: url(LegoEmojis/spiderman.png);
     background-size: cover;
     border: none;   
 }
 .C, #C {
-    background: url(images/C.png);
+    background-image: url(LegoEmojis/wolverine.png);
     background-size: cover;
     border:none;
 }
 .D, #D {
-    background-image: url(images/D.png);
+    background-image: url(LegoEmojis/deadpool.png);
     background-size: cover;
     border: none;
 }
 .E, #E {
-    background-image: url(images/E.png);
+    background-image: url(LegoEmojis/thor.png);
     background-size: cover;
     border: none;
 }
 .F, #F {
-    background-image: url(images/F.png);
+    background-image: url(LegoEmojis/superman.png);
     background-size: cover;
     border: none;
 }
@@ -294,31 +317,10 @@ h1 {
       0 0 100px #0ff,
       0 0 150px #0ff;
 }
-.controls {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    width:90px;
-    border-radius: 7%;
+.neon2{
+    font-family: 'Pacifico', cursive;
+    /* font-family: 'Shadows Into Light', cursive; */
+    /* font-family: 'Permanent Marker', cursive; */
     text-align: center;
-    margin-bottom: 8px;
-    display:inline-block;
-    background-color: rgb(104, 211, 179, 0.541);
-    padding: 15px 25px;
-    /* font-size: 24px;
-    text-align: center; */
-    cursor: pointer;
-    outline: none;
-    /* color: #fff; */
-    /* background-color: #4CAF50; */
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 9px #999;
-  }
-  
-  .controls:hover {background-color:rgba(57, 142, 117, 0.541)}
-  
-  .controls:active {
-    background-color: rgba(57, 142, 117, 0.541);
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-    color: white;
-  }
+    
+}

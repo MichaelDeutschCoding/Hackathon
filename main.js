@@ -39,7 +39,6 @@ function newGame() {
 
     $('#winningModal').modal('hide');
     $('#losingModal').modal('hide');
-
     clearGuess();
     for (elem of document.getElementsByClassName("peg")){
         elem.className = "peg";
@@ -155,6 +154,7 @@ function analyzeGuess(code, guess) {
 function display(result) {
 
     let currRow = 9-turnNum;
+
     for (let i=0; i<4; i++) {
         guessRows[currRow].children[i].classList.add(result[0][i]);
     }
@@ -187,13 +187,9 @@ for (z of landzone) {
     z.addEventListener("dragleave", dragLeave);
     z.addEventListener("drop", drop);
 }
-
-
-//for testing --> remove before release
 turnNum = 0;
 code = ["A", "B", "C", "D"];
 
+
 let g1 = ["B", "B", "D", "A"];
 let g2 = ["D", "C", "D", "F"];
-
-// $("#winningModal").modal("show")
