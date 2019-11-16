@@ -6,16 +6,15 @@
         <title>Mastermind</title>
         <script src="https://kit.fontawesome.com/694072c986.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
         <script defer src="main.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Cinzel|Monoton|Orbitron|Press+Start+2P|Righteous&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Orbitron|Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+
         <script src="https://kit.fontawesome.com/6a2f886324.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="container title">
-            <h1 class="neon">MasterMind 2.0</h1>
-        </div>
+        <h1 class="neon">MasterMind 2.0</h1>
         <div class="main">
             <div class='board'>
                 <div class="boardHead">
@@ -50,14 +49,14 @@
                     <div class='marble' draggable="true" id="E"></div>
                     <div class='marble' draggable="true" id="F"></div>
                 </div>
-                
-                <div id='reset' class="controls"><i class="fas fa-backward"></i><span>
-                </span>Reset</div>
-                <div id='newGame' class="controls">New<span> </span><i class="fas fa-play-circle"></i><span> </span>Game</div>
-                <div id='submit' class="controls submitUnready">Submit<span></span><i class="fas fa-sign-in-alt"></i></i></div>
-                <div id='mute' class="controls">Mute</div>
-                <div id='info' class="controls">Info</div>
-                <div id='revealCode' class='controls'>Give Up</div>
+                <div class="controls">
+                    <div id='reset' class="butts"><br><i class="fas fa-lg fa-backward"></i><br>Reset</div>
+                    <div id='newGame' class="butts">New<br><i class="fas fa-lg fa-play-circle"></i><br>Game</div>
+                    <div id='submit' class="butts">Submit<br><i class="fas fa-lg fa-sign-in-alt"></i><br></div>
+                    <div id='mute' class="butts mini-butts">Mute</div>
+                    <div id='info' class="butts mini-butts">Info</div>
+                    <div id='revealCode' class='butts mini-butts'>Show Code</div>
+                </div>
                 <div class="themeArea-header">Change Theme</div>
                 <div class="themeArea">
                     <a onclick="changeTheme('X')"><img src="images/X/C.png" class="theme-button"></a>
