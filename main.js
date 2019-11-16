@@ -1,22 +1,3 @@
-let ga = document.getElementsByClassName("guessArea")[0];
-let ra = document.getElementsByClassName("resultsArea")[0];
-for (let i=0; i< 10; i++) {
-    let guess = document.createElement("div");
-    guess.classList.add("guess");
-    ga.appendChild(guess);
-    let result = document.createElement("div");
-    result.classList.add("result");
-    ra.appendChild(result)
-    for (let j = 0; j<4; j++) {
-        let p = document.createElement("div");
-        p.classList.add("peg");
-        let s = document.createElement('div');
-        s.classList.add("scorePeg");
-        guess.appendChild(p);
-        result.appendChild(s);
-    }
-}
-
 let landzone = document.getElementsByClassName("landing");
 let marbles = document.getElementsByClassName("marble");
 let guessRows = document.getElementsByClassName("guess");
@@ -24,8 +5,30 @@ let resultRows = document.getElementsByClassName("result");
 let secretPegs = document.getElementsByClassName("secretPeg");
 let submitButton = document.getElementById("submit");
 const colors = ["A", "B", "C", "D", "E", "F"];
-let turnNum;
+let turnNum = 0;
+let theme = "Y";
 let code;
+
+function populateBoard() {
+    let ga = document.getElementsByClassName("guessArea")[0];
+    let ra = document.getElementsByClassName("resultsArea")[0];
+    for (let i = 0; i < 10; i++) {
+        let guess = document.createElement("div");
+        guess.classList.add("guess");
+        ga.appendChild(guess);
+        let result = document.createElement("div");
+        result.classList.add("result");
+        ra.appendChild(result);
+        for (let j = 0; j < 4; j++) {
+            let p = document.createElement("div");
+            p.classList.add("peg");
+            let s = document.createElement('div');
+            s.classList.add("scorePeg");
+            guess.appendChild(p);
+            result.appendChild(s);
+        }
+    }
+}
 
 function generateRandomCode() {
     let code = []
@@ -74,11 +77,7 @@ function lost() {
 }
 
 function onDragStart(event){
-    event.dataTransfer.setData("text/plain", event.target.id);
-}
-
-function dragEnded(event) {
-    event.currentTarget.classList = "marble";
+    event.dataTransfer.setData("text/plain", event.target.id + theme);
 }
 
 function allowDrop(ev) {
@@ -121,7 +120,7 @@ function submitGuess() {
     if (!validate()) {return};
     let currentGuess = [];
     for (elem of landzone) {
-        currentGuess.push(elem.classList[1]);
+        currentGuess.push(elem.classList[1][0]);
     }
     // currentGuess = ["A", "D", "F", "F"];            // REMOVE after testing
     let result = analyzeGuess(code, currentGuess);
@@ -156,7 +155,7 @@ function display(result) {
 
     let currRow = 9-turnNum;
     for (let i=0; i<4; i++) {
-        guessRows[currRow].children[i].classList.add(result[0][i]);
+        guessRows[currRow].children[i].classList.add(result[0][i] + theme);
     }
     let i = 0;
     for (let j=0; j<result[1]; j++){
@@ -173,13 +172,28 @@ function display(result) {
     else{turnNum++;}
 }
 
+function changeTheme(newTheme){
+    if (turnNum > 0) {
+        if (!confirm("This will start a new game. Are you sure?")){
+            return;
+        }
+    }
+    theme = newTheme;
+    for (c of marbles) {
+        c.className = "marble " + c.id + theme;
+    }
+    newGame();
+}
+
+populateBoard();
+
 document.getElementById("reset").addEventListener("click", clearGuess);
 submitButton.addEventListener("click", submitGuess);
 document.getElementById("newGame").addEventListener("click", newGame);
 
 for (c of marbles) {
     c.addEventListener("dragstart",onDragStart);
-    c.addEventListener("dragend", dragEnded);
+    c.className = "marble " + c.id + theme;
 }
 
 for (z of landzone) {
@@ -190,7 +204,6 @@ for (z of landzone) {
 
 
 //for testing --> remove before release
-turnNum = 0;
 code = ["A", "B", "C", "D"];
 
 let g1 = ["B", "B", "D", "A"];
