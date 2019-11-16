@@ -219,6 +219,7 @@ function changeTheme(newTheme) {
     for (c of marbles) {
         c.className = "marble " + c.id + theme;
     }
+    if (!mute) {soundEffects["switch_theme"].play()};
     newGame();
 }
 
