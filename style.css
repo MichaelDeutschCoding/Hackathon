@@ -93,7 +93,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    
 }
 .guess {
      display:flex;
@@ -119,7 +118,6 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     width: 35px;
-    /* margin-bottom: 3px; */
 }
 .scorePeg {
     width: 9px;
@@ -212,9 +210,6 @@ body {
     transform: translateY(4px);
     color:black;
 }
-/* #newGame {
-    background-color: rgba(57, 142, 117, 0.541);
-} */
 
 .themeArea-header {
     margin-top: 10px;
@@ -225,8 +220,7 @@ body {
     margin-bottom:0;
     color: rgb(144, 135, 135, 0.5);
     text-shadow: 4px 4px 5px #000000db;
-    font-family: 'Righteous', cursive;
-    
+    font-family: 'Righteous', cursive;  
 }
 .themeArea{
     display: flex;
