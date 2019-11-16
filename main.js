@@ -90,6 +90,7 @@ function reveal() {
 
 function won() {
     console.log("You win!");
+    soundEffects["submit_guess"].pause();
     if(!mute) soundEffects["won_game"].play();    
     reveal();
     $('#winningModal').modal('show');
@@ -97,6 +98,7 @@ function won() {
 
 function lost() {
     console.log("You Lose!");
+    soundEffects["submit_guess"].pause();
     if(!mute) soundEffects["lost_game"].play();
     reveal();
     $('#losingModal').modal('show');
@@ -174,7 +176,8 @@ function analyzeGuess(code, guess) {
         whites = (g > c) ? whites+c : whites+g;
     }
     if ((blacks + whites == 0) && (!mute)) {
-        soundEffects["none_correct"];
+        soundEffects["submit_guess"].pause();
+        soundEffects["none_correct"].play();
     }
 
     console.log("Blacks:", blacks, "Whites:", whites);
