@@ -67,8 +67,10 @@ body {
     /* border: 1px solid rgb(158, 180, 178); */
     background-color: rgb(32, 32, 32);
     background-image: url(images/questionmark3.png);
-    background-size: cover;
+    background-size: 30px;
+    background-repeat: no-repeat;
     display: inline-block;
+    opacity: 0.8;
 }
 .line{
     background-color: rgb(20, 10, 20, 0.4);
@@ -221,8 +223,10 @@ body {
     font-weight: 500;
     text-align: center;
     margin-bottom:0;
-    color: rgb(144, 135, 135);
+    color: rgb(144, 135, 135, 0.5);
     text-shadow: 4px 4px 5px #000000db;
+    font-family: 'Righteous', cursive;
+    
 }
 .themeArea{
     display: flex;
