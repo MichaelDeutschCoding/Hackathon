@@ -1,12 +1,8 @@
 *{
     box-sizing: border-box;
 }
-.title {
-    padding-top: 10px;
-    padding-bottom: 0;
-}
 .neon {
-    padding-top: 10px;
+    padding-top: 20px;
     color: #fff;
     text-shadow:
       0 0 5px #fff,
