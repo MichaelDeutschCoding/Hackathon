@@ -37,6 +37,7 @@ function addEventListeners() {
     document.getElementById("info").addEventListener("click", function () {
         $("#infoModal").modal("show");
     });
+    document.getElementById("mute").addEventListener("click", toggleSoundEffects);
     document.getElementById("revealCode").addEventListener("click", function () {
         if (confirm("You really want to give up?"))
             reveal();
@@ -88,12 +89,14 @@ function reveal() {
 
 function won() {
     console.log("You win!");
+    if(!mute) soundEffects["won_game"].play();    
     reveal();
     $('#winningModal').modal('show');
 }
 
 function lost() {
     console.log("You Lose!");
+    if(!mute) soundEffects["lost_game"].play();
     reveal();
     $('#losingModal').modal('show');
 }
@@ -116,6 +119,8 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     ev.target.classList = "landing " + data;
     ev.target.classList.remove("landingHover");
+    soundEffects["drop_piece"].currentTime = 0;
+    if(!mute) {soundEffects["drop_piece"].play()};
     validate()
 }
 
@@ -147,6 +152,7 @@ function submitGuess() {
     // currentGuess = ["A", "D", "F", "F"];            // REMOVE after testing
     let result = analyzeGuess(code, currentGuess);
     console.log(result);
+    if(!mute) soundEffects["submit_guess"].play();
     display(result);
     clearGuess();
 }
@@ -166,6 +172,10 @@ function analyzeGuess(code, guess) {
         }
         whites = (g > c) ? whites+c : whites+g;
     }
+    if ((blacks + whites == 0) && (!mute)) {
+        soundEffects["none_correct"];
+    }
+
     console.log("Blacks:", blacks, "Whites:", whites);
     return [guess, blacks, whites];
 }
@@ -210,6 +220,28 @@ function changeTheme(newTheme) {
     }
     newGame();
 }
+
+const toggleSoundEffects = () => {mute = (!mute)}
+
+let soundEffects = {}
+
+function addSoundEffect(effect) {
+    let new_audio = document.createElement("audio");
+    let source = document.createElement("source");
+    source.type = "audio/wav";
+    source.src = "sounds/" + effect +".wav";
+    new_audio.appendChild(source);
+    document.body.appendChild(new_audio);
+    soundEffects[effect] = new_audio;
+}
+
+addSoundEffect("drop_piece");
+addSoundEffect("submit_guess");
+addSoundEffect("won_game");
+addSoundEffect("lost_game");
+addSoundEffect("none_correct");
+addSoundEffect("switch_theme");
+
 
 populateBoard();
 addEventListeners();
