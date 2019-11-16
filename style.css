@@ -38,13 +38,13 @@ body {
 .main {
     display: flex;
     justify-content: center;
-    height: 600px;
+    height: 670px;
     align-items: center;
 }
 
 .board {
-    height: 600px;
-    width: 240px;
+    height: 620px;
+    width: 260px;
     background-color: rgba(104, 211, 179, 0.541);
     border-radius: 10%;
     /* border: solid 2px green; */
@@ -114,8 +114,10 @@ body {
     width: 33px;
     height: 33px;
     border-radius: 50%;
-    border: 1px solid rgb(158, 180, 178);
+    /* border: 1px solid rgb(158, 180, 178); */
     background-color: rgb(32, 32, 32);
+    background-image: url(images/questionmark3.png);
+    background-size: cover;
     display: inline-block;
 }
 
