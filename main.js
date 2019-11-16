@@ -4,6 +4,7 @@ let guessRows = document.getElementsByClassName("guess");
 let resultRows = document.getElementsByClassName("result");
 let secretPegs = document.getElementsByClassName("secretPeg");
 let submitButton = document.getElementById("submit");
+let muteButton = document.getElementById("mute");
 const colors = ["A", "B", "C", "D", "E", "F"];
 let turnNum = 0;
 let theme = "X";
@@ -38,7 +39,7 @@ function addEventListeners() {
     document.getElementById("info").addEventListener("click", function () {
         $("#infoModal").modal("show");
     });
-    document.getElementById("mute").addEventListener("click", toggleSoundEffects);
+    muteButton.addEventListener("click", toggleSoundEffects);
     document.getElementById("revealCode").addEventListener("click", function () {
         if (confirm("You really want to give up?"))
             reveal();
@@ -226,7 +227,10 @@ function changeTheme(newTheme) {
     newGame();
 }
 
-const toggleSoundEffects = () => {mute = (!mute)}
+const toggleSoundEffects = () => {
+    mute = (!mute);
+    muteButton.classList.toggle("mute-pressed");
+}
 
 let soundEffects = {}
 
