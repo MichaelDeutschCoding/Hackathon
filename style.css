@@ -194,7 +194,7 @@ body {
     background-color: rgb(104, 211, 179, 0.541);
     cursor: pointer;
     outline: none;
-    color: #fff;
+    color: black;
     border: none;
     box-shadow: 0 9px rgb(88, 119, 110);
 }
