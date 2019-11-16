@@ -43,7 +43,7 @@ body {
 }
 
 .board {
-    height: 580px;
+    height: 600px;
     width: 240px;
     background-color: rgba(104, 211, 179, 0.541);
     border-radius: 10%;
@@ -53,6 +53,16 @@ body {
     justify-content: space-around;
    padding-top: 10px;
 }
+.boardBody{
+    display: flex;
+    justify-content: center;
+    height:100%;
+    padding: 10px 5px;
+}
+.boardHead{
+    display: flex;
+    height:10%;
+} 
 
 .inputArea {
     height: 500px;
@@ -72,19 +82,7 @@ body {
 
 #newGame {
     background-color: rgba(57, 142, 117, 0.541);
-}
-
-.boardBody{
-    display: flex;
-    justify-content: center;
-    height:100%;
-    padding: 10px 5px;
-}
-
-.boardHead{
-    display: flex;
-    height:10%;
-}   
+}  
 
 .guessArea { 
    padding-top: 5px;
@@ -112,13 +110,6 @@ body {
     justify-content: space-around;
     margin: 15px 0 8px 20px;
 }
-.logo{
-    width: 35%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
 .secretPeg{
     width: 33px;
     height: 33px;
@@ -126,6 +117,13 @@ body {
     border: 1px solid rgb(158, 180, 178);
     background-color: rgb(32, 32, 32);
     display: inline-block;
+}
+
+.logo{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 .resultsArea {
     width: 15%;

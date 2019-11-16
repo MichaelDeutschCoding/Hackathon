@@ -60,7 +60,7 @@ function newGame() {
 
 function reveal() {
     for (i in code) {
-        secretPegs[i].classList.add(code[i]);
+        secretPegs[i].classList.add(code[i]+theme);
     }
 }
 
