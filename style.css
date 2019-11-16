@@ -27,8 +27,8 @@ body {
 }
 
 .peg {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 36px;
     border-radius: 50%;
     border: 1px solid rgb(28, 75, 71); 
     background-color: rgb(32, 32, 32);   
@@ -45,6 +45,7 @@ body {
 .board {
     height: 620px;
     width: 260px;
+    min-width: 250px;
     background-color: rgba(104, 211, 179, 0.541);
     border-radius: 10%;
     /* border: solid 2px green; */
@@ -64,6 +65,34 @@ body {
     height:10%;
 } 
 
+.guessArea { 
+    margin-right: 23px;
+    width:65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+ }
+ .guess {
+     display:flex;
+     justify-content: space-around;
+ }
+ 
+.resultsArea {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.result {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 35px;
+    /* margin-bottom: 3px; */
+}
+
 .inputArea {
     height: 500px;
     margin: 20px;
@@ -79,18 +108,23 @@ body {
     display:inline-block;
     background-color: rgb(104, 211, 179, 0.541);
 }
+
+#newGame {
+    background-color: rgba(57, 142, 117, 0.541);
+} 
+
 .themeArea{
     display: flex;
     justify-content: space-evenly;
 }
 .theme-button {
-    height: 60px;
-    width: 60px;
+    height: 55px;
+    width: 55px;
     border-radius: 40%;
-    transition: all 0.2s ease-in;
+    transition: all 0.3s ease-in;
 }
 .theme-button:hover {
-    transform: scale(1.2);
+    transform: scale(1.3);
 }
 
 .themeArea-header {
@@ -104,29 +138,6 @@ body {
     text-shadow: 4px 4px 5px #000000db;
 }
 
-#newGame {
-    background-color: rgba(57, 142, 117, 0.541);
-}  
-
-.guessArea { 
-   padding-top: 5px;
-   margin-right: 20px;
-   /* border:solid 1px red; */
-   width:60%;
-   height: 100%;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
-   
-}
-.guess {
-    height:10%;
-    width:100%;
-    padding-top: 5px;
-    display:flex;
-    justify-content: space-around;
-}
-
 .secret{
     width:65%;
     display: flex;
@@ -135,8 +146,8 @@ body {
     margin: 15px 0 8px 20px;
 }
 .secretPeg{
-    width: 33px;
-    height: 33px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     /* border: 1px solid rgb(158, 180, 178); */
     background-color: rgb(32, 32, 32);
@@ -150,21 +161,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-}
-.resultsArea {
-    width: 15%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height:100%;
-}
-
-.result {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 35px;
-    margin-bottom: 3px;
 }
 
 .scorePeg {
