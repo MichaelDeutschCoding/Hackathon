@@ -6,7 +6,7 @@ let secretPegs = document.getElementsByClassName("secretPeg");
 let submitButton = document.getElementById("submit");
 const colors = ["A", "B", "C", "D", "E", "F"];
 let turnNum = 0;
-let theme = "Y";
+let theme = "X";
 let code;
 
 function populateBoard() {

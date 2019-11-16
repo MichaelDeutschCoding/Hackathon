@@ -278,67 +278,97 @@ h1 {
 }
 
 .AX {
-    background-image: url(images/A.png);
+    background-image: url(images/X/A.png);
     background-size: cover;
     border: none;
 }
 .BX{
-    background-image: url(images/B.png);
+    background-image: url(images/X/B.png);
     background-size: cover;
     border: none;   
 }
 .CX {
-    background-image: url(images/C.png);
+    background-image: url(images/X/C.png);
     background-size: cover;
     border:none;
 }
 .DX {
-    background-image: url(images/D.png);
+    background-image: url(images/X/D.png);
     background-size: cover;
     border: none;
 }
 .EX {
-    background-image: url(images/E.png);
+    background-image: url(images/X/E.png);
     background-size: cover;
     border: none;
 }
 .FX {
-    background-image: url(images/F.png);
+    background-image: url(images/X/F.png);
     background-size: cover;
     border: none;
 }
 
 .AY {
-    background-image: url(images/AY.png);
+    background-image: url(images/Y/A.png);
     background-size: cover;
     border: none;
 }
 .BY{
-    background-image: url(images/BY.png);
+    background-image: url(images/Y/B.png);
     background-size: cover;
     border: none;   
 }
 .CY {
-    background-image: url(images/C.png);
+    background-image: url(images/Y/C.png);
     background-size: cover;
     border:none;
 }
 .DY {
-    background-image: url(images/D.png);
+    background-image: url(images/Y/D.png);
     background-size: cover;
     border: none;
 }
 .EY {
-    background-image: url(images/E.png);
+    background-image: url(images/Y/E.png);
     background-size: cover;
     border: none;
 }
 .FY {
-    background-image: url(images/F.png);
+    background-image: url(images/Y/F.png);
     background-size: cover;
     border: none;
 }
 
+.AZ {
+    background-image: url(images/Z/A.png);
+    background-size: cover;
+    border: none;
+}
+.BZ{
+    background-image: url(images/Z/B.png);
+    background-size: cover;
+    border: none;   
+}
+.CZ {
+    background-image: url(images/Z/C.png);
+    background-size: cover;
+    border:none;
+}
+.DZ {
+    background-image: url(images/Z/D.png);
+    background-size: cover;
+    border: none;
+}
+.EZ {
+    background-image: url(images/Z/E.png);
+    background-size: cover;
+    border: none;
+}
+.FZ {
+    background-image: url(images/Z/F.png);
+    background-size: cover;
+    border: none;
+}
 .submitReady {
     background-color: rgba(104, 211, 179, 0.8);
     border: 1px solid white;
