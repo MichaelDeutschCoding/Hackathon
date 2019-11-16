@@ -210,9 +210,12 @@ body {
     transform: translateY(4px);
     color:black;
 }
-/* #newGame {
-    background-color: rgba(57, 142, 117, 0.541);
-} */
+.mute-pressed {
+    background-color: rgba(30, 78, 64, 0.541);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    color:black;
+}
 
 .themeArea-header {
     margin-top: 10px;
