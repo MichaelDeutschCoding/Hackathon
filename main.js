@@ -190,6 +190,12 @@ populateBoard();
 document.getElementById("reset").addEventListener("click", clearGuess);
 submitButton.addEventListener("click", submitGuess);
 document.getElementById("newGame").addEventListener("click", newGame);
+document.getElementById("info").addEventListener("click", function() {
+    $("#infoModal").modal("show");
+});
+document.getElementById("revealCode").addEventListener("click", function() {
+    if(confirm("You really want to give up?")) reveal();
+});
 
 for (c of marbles) {
     c.addEventListener("dragstart",onDragStart);
