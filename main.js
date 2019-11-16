@@ -8,6 +8,7 @@ const colors = ["A", "B", "C", "D", "E", "F"];
 let turnNum = 0;
 let theme = "X";
 let code;
+let mute = false;
 
 function populateBoard() {
     let ga = document.getElementsByClassName("guessArea")[0];
