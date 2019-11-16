@@ -177,20 +177,45 @@ body {
     transform: scale(1.2);
 }
 
-.controls {
+.controls{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 150px
+}
+.butts {
     font-family: 'Yanone Kaffeesatz', sans-serif;
     width:90px;
-    border-radius: 7%;
+    height: 80px;
+    border-radius: 10%;
+    padding-top: 8px;
     text-align: center;
     margin-bottom: 8px;
-    display:inline-block;
     background-color: rgb(104, 211, 179, 0.541);
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    border: none;
+    box-shadow: 0 9px rgb(88, 119, 110);
 }
-#newGame {
+.mini-butts{
+    height: 25px;
+    padding-top: 2px;
+}
+.butts:hover {background-color: rgba(173, 247, 224, 0.54);}
+
+.butts:active {
+    background-color: rgba(137, 204, 184, 0.541);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    color:black;
+}
+/* #newGame {
     background-color: rgba(57, 142, 117, 0.541);
-}
+} */
+
 .themeArea-header {
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 8px;
     font-size: 1.6rem;
     font-weight: 500;
