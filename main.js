@@ -130,9 +130,7 @@ function submitGuess() {
 }
 
 function analyzeGuess(code, guess) {
-    if (code.length != guess.length) {
-        throw "Ya done goofed!";
-    }
+
     let blacks = 0;
     for (let i  in guess) {
         if (code[i] == guess[i]) {blacks++}
@@ -154,25 +152,32 @@ function analyzeGuess(code, guess) {
 function display(result) {
 
     let currRow = 9-turnNum;
+
+    // Display guess pegs
     for (let i=0; i<4; i++) {
         guessRows[currRow].children[i].classList.add(result[0][i] + theme);
     }
+
+    // Display result black pegs
     let i = 0;
     for (let j=0; j<result[1]; j++){
         resultRows[currRow].children[i].classList.add("blackPeg");
         i++;
     }
+
+    // Display result  white pegs
     for (let j=0; j<result[2]; j++) {
         resultRows[currRow].children[i].classList.add("whitePeg");
         i++;
     }
 
+    // Check for win/loss conditions
     if (result[1] == 4) {won();}
     else if (turnNum == 9) {lost();}
     else{turnNum++;}
 }
 
-function changeTheme(newTheme){
+function changeTheme(newTheme) {
     if (turnNum > 0) {
         if (!confirm("This will start a new game. Are you sure?")){
             return;
