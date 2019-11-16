@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mastermind</title>
+        <script src="https://kit.fontawesome.com/694072c986.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <script defer src="main.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Cinzel|Monoton|Orbitron|Press+Start+2P|Righteous&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron|Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+
+        <script src="https://kit.fontawesome.com/6a2f886324.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container title">
+            <h1 class="neon">MasterMind 2.0</h1>
+        </div>
+        <div class="main">
+            <div class='board'>
+                <div class="boardHead">
+                    <div class="secret">
+                        <div class="secretPeg"></div>
+                        <div class="secretPeg"></div>
+                        <div class="secretPeg"></div>
+                        <div class="secretPeg"></div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="logo">
+                        <img src="images/realLogo.png" height="90%">
+                    </div>
+                </div>
+                <div class="boardBody">
+                    <div class="guessArea"></div>
+                    <div class="resultsArea" ></div>
+                </div>
+            </div>
+            <div class='inputArea'>
+                <div class='landingZone'>
+                    <div class='landing'></div>
+                    <div class='landing'></div>
+                    <div class='landing'></div>
+                    <div class='landing'></div>
+                </div>
+                <div class='palette'>
+                    <div class='marble' draggable="true" id="A"></div>
+                    <div class='marble' draggable="true" id="B"></div>
+                    <div class='marble' draggable="true" id="C"></div>
+                    <div class='marble' draggable="true" id="D"></div>
+                    <div class='marble' draggable="true" id="E"></div>
+                    <div class='marble' draggable="true" id="F"></div>
+                </div>
+                
+                <div id='reset' class="controls"><i class="fas fa-backward"></i><span>
+                </span>Reset</div>
+                <div id='newGame' class="controls">New<span> </span><i class="fas fa-play-circle"></i><span> </span>Game</div>
+                <div id='submit' class="controls submitUnready">Submit<span></span><i class="fas fa-sign-in-alt"></i></i></div>
+                <div id='mute' class="controls">Mute</div>
+                <div id='info' class="controls">Info</div>
+                <div id='revealCode' class='controls'>Give Up</div>
+                <div class="themeArea-header">Change Theme</div>
+                <div class="themeArea">
+                    <a onclick="changeTheme('X')"><img src="images/X/C.png" class="theme-button"></a>
+                    <a onclick="changeTheme('Y')"><img src="images/Y/A.png" class="theme-button"></a>
+                    <a onclick="changeTheme('Z')"><img src="images/Z/C.png" class="theme-button"></a>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Info Modal -->
+        <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">About Mastermind</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item"><a class="nav-link active" href="#overview" role="tab" data-toggle="tab">Overview</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#gameplay" role="tab" data-toggle="tab">Gameplay</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#tips" role="tab" data-toggle="tab">Tips</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about" role="tab" data-toggle="tab">About the Game</a></li>
+                        </ul>
+                        <div class="tab-content active">
+                            <div role="tabpanel" class="tab-pane active in" id="overview">
+                                <p>The object of Mastermind is to correctly guess the Codemaster's secret code in as few guesses as possible. You gain information about the code by submitting guesses and analyzing the Codemaster's responses.  If you can accurately determine the exact code that was hidden within 10 guesses, you win!</p><p>Now get cracking!</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="gameplay">
+                                <p>The Codemaster chooses a secret code of four pegs, made from any combination of the six colors available. Colors may be repeated, but all four spots must be used. (In our case, the computer will play this role!) The Codebreaker then submits a guess, again using any four pegs. You will then receive feedback about how accurate your guess was via the white and black pegs.</p>
+                                <p>A black peg means that one of the guessed pegs was the correct color in the correct location. Every white peg indicates one of the guessed pegs was in the code, but is not in the correct location. <strong>The order of the black and white pegs do not imply anything about the code.</strong> If a color is repeated in the guess, but not repeated in the secret code, it will only score one peg (black if in the correct location, white otherwise). Using the clues given, you can identify patterns signalling what colors must be in the code, and which ones defintely are not. Keep guessing until you figure out the correct code!</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tips">
+                                <p>Drag a peg from the palette to the guess zone on the right side of the board. When you are satisfied with you entry, click "Submit" to register your guess and see the results. You can remove pegs from the guess-input area by pressing "Reset". You can start a new game any time by clicking "New Game".</p>
+                                <p>Use your guesses wisely. You have only 10 chances to crack the code! Some strategies focus on identifying colors you know are <strong>not</strong> in the code, and then using those to narrow down the positions for other colors. A common starting guess would be two each of two colors. You can find some strategy tips <a href="http://codebreaker.creativitygames.net/mastermind_strategy_for_real_people.php" target="blank">here</a> and a <strong>much more</strong> extensive treatment <a href="http://www.geometer.org/mathcircles/mastermind.pdf" target="blank">here</a>.</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="about">
+                                <p>The modern version of the game, played with a board and pegs, was invented in 1970 by Mordecai Meirowitz, an Israeli postmaster and telecommunications expert. It all started with 'Bulls and Cows', an English code-breaking game of unknown origin played with paper and pencil. Each player writes a secret sequence of four numbers, and the opponent has to guess the sequence. Matching digits are called “bulls,” while wrong guesses are “cows”.</p>
+                                <p>While there are now many variations of the game, with more and fewer colors to choose from, and different numbers of pegs in the secret code, the original version, still most widely played today, uses six colors and four locations. This calculates to a total of 6<sup>4</sup> = 1,296 possible patterns for the code. In 1977, Donald Knuth demonstrated that the codebreaker can solve the pattern in five moves or fewer, using an algorithm that progressively reduces the number of possible patterns. He published a <a target="blank" href="http://www.cs.uni.edu/~wallingf/teaching/cs3530/resources/knuth-mastermind.pdf">paper about it</a> describing how a computer can identify which guesses will be the most helpful at deducing the code.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer info-modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Winning Modal -->
+        <div class="modal fade" id="winningModal" tabindex="-1" role="dialog"naria-hidden="true">
+        <div class="modal-dialog modal-notify modal-success" role="document">
+            <!--Content-->
+            <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header-won">
+                <p class="headinglead">You won!</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                        <i class="fas fa-thumbs-up fa-7x"></i>
+                 <p><br></p>       
+                <p>Congratulations!<br>You solved the code. Way to go!</p>
+                </div>
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+                <a type="button" class="btn btn-success" onclick="newGame()">Play Again?</a>
+                <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">No, Thanks</a>
+            </div>
+            </div>
+        </div>
+        </div>
+  
+        <!-- Losing Modal -->
+        <div class="modal fade" id="losingModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">You Lose!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Pathetic<br>You had <strong>10 guesses</strong> and still couldn't manage to crack the code!</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No Way!</button>
+                        <button type="button" class="btn btn-primary" onclick="newGame()">Yeah, why not</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+    </body>
+    </html>
